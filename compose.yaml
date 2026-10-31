@@ -1,0 +1,13 @@
+services:
+  shop:
+    build: .
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - shop_data:/var/lib/shop-lab
+      - shop_uploads:/var/www/html/uploads
+    restart: unless-stopped
+
+volumes:
+  shop_data:
+  shop_uploads:
